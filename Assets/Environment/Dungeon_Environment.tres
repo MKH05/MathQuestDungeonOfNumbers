@@ -1,0 +1,36 @@
+[gd_resource type="Environment" load_steps=3 format=3 uid="uid://bkpykxn5phf6i"]
+
+[sub_resource type="Gradient" id="Gradient_8b022"]
+offsets = PackedFloat32Array(0, 0.163934, 0.831967, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.147693, 0.162048, 0.211585, 1, 0.840086, 0.831913, 0.809712, 1, 1, 1, 0.964706, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_inb1m"]
+gradient = SubResource("Gradient_8b022")
+
+[resource]
+background_energy_multiplier = 0.5
+ssao_radius = 0.01
+sdfgi_use_occlusion = true
+sdfgi_read_sky_light = false
+glow_enabled = true
+glow_levels/1 = 1.0
+glow_levels/2 = 1.0
+glow_levels/4 = 1.0
+glow_levels/6 = 1.0
+glow_intensity = 0.2
+glow_bloom = 0.1
+glow_blend_mode = 1
+fog_enabled = true
+fog_light_color = Color(0.168627, 0.211765, 0.368627, 1)
+fog_light_energy = 1.09
+fog_density = 0.004
+fog_sky_affect = 0.0
+fog_height = -0.5
+fog_height_density = 0.75
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.1
+volumetric_fog_albedo = Color(0.494118, 0.521569, 0.8, 1)
+volumetric_fog_emission = Color(0.168627, 0.188235, 0.305882, 1)
+volumetric_fog_length = 65.0
+adjustment_enabled = true
+adjustment_color_correction = SubResource("GradientTexture1D_inb1m")
