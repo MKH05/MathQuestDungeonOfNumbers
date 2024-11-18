@@ -4,7 +4,7 @@ var front_ray
 var back_ray
 var animation
 
-const TRAVEL_TIME = 0.3
+const TRAVEL_TIME = 0.5
 var tween
 
 func _ready():
