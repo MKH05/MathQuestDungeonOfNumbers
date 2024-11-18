@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://dpbhin2ysth76"]
+[gd_scene load_steps=7 format=3 uid="uid://dpbhin2ysth76"]
 
 [ext_resource type="Script" path="res://addons/level_block/level_block_node.gd" id="1_hsvdt"]
 [ext_resource type="Material" uid="uid://c71yladfjhgud" path="res://addons/level_block/default_material.tres" id="2_h16m8"]
 [ext_resource type="Texture2D" uid="uid://dpccdpj80v5f7" path="res://Assets/tileset.png" id="3_6vnx0"]
 [ext_resource type="PackedScene" uid="uid://lg7tjjb1wgro" path="res://Levels/Entity/Player/player.tscn" id="4_f4mmq"]
 [ext_resource type="Environment" uid="uid://bkpykxn5phf6i" path="res://Assets/Environment/Dungeon_Environment.tres" id="5_sb2dq"]
+[ext_resource type="PackedScene" uid="uid://bob7138tsw51p" path="res://Levels/Entity/enemy.tscn" id="6_sr0mh"]
 
 [node name="Level1" type="Node3D"]
 
@@ -332,3 +333,8 @@ transform = Transform3D(-2.18557e-07, 0, -1, 0, 1, 0, 1, 0, -2.18557e-07, 0, 0, 
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource("5_sb2dq")
+
+[node name="Enemies" type="Node" parent="."]
+
+[node name="Enemy" parent="Enemies" instance=ExtResource("6_sr0mh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)

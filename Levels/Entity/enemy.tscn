@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://bob7138tsw51p"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_x6e14"]
+
+[node name="Enemy" type="CharacterBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_x6e14")
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
