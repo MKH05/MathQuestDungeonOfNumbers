@@ -7,6 +7,10 @@
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_x6e14")
 
-[node name="RayCast3D" type="RayCast3D" parent="."]
-
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+
+[node name="FrontRay" type="RayCast3D" parent="."]
+target_position = Vector3(0, 0, -2)
+
+[node name="BackRay" type="RayCast3D" parent="."]
+target_position = Vector3(0, 0, 2)
