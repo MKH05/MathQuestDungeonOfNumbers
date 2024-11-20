@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=3 uid="uid://bob7138tsw51p"]
+[gd_scene load_steps=68 format=3 uid="uid://b1ihufxo6ofh5"]
 
 [ext_resource type="Texture2D" uid="uid://bqxn0aeb4v5vy" path="res://addons/monochrome_32x32_transparent.png" id="1_h7nd4"]
 
@@ -781,11 +781,9 @@ animations = [{
 shape = SubResource("CapsuleShape3D_x6e14")
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
-transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -0.25, 0)
 billboard = 2
-texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_m6g37")
-animation = &"Crab"
+animation = &"Julemand type shit"
 autoplay = "Crab"
 
 [node name="FrontRay" type="RayCast3D" parent="."]
