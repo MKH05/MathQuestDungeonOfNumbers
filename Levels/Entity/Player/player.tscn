@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://lg7tjjb1wgro"]
+[gd_scene load_steps=8 format=3 uid="uid://lg7tjjb1wgro"]
 
 [ext_resource type="Script" path="res://Levels/Entity/Player/player.gd" id="1_jko8i"]
 
@@ -85,6 +85,8 @@ _data = {
 "RESET": SubResource("Animation_fury6")
 }
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_mcdrq"]
+
 [node name="Player" type="Node3D"]
 transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, 0, 0, 0)
 script = ExtResource("1_jko8i")
@@ -93,6 +95,11 @@ script = ExtResource("1_jko8i")
 
 [node name="FrontRay" type="RayCast3D" parent="."]
 target_position = Vector3(0, 0, -2)
+
+[node name="DetectRay" type="RayCast3D" parent="."]
+target_position = Vector3(0, 0, -4)
+debug_shape_custom_color = Color(0, 0, 10, 1)
+debug_shape_thickness = 1
 
 [node name="BackRay" type="RayCast3D" parent="."]
 target_position = Vector3(0, 0, 2)
@@ -105,3 +112,6 @@ omni_range = 2.0
 libraries = {
 "": SubResource("AnimationLibrary_ehrcg")
 }
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_mcdrq")

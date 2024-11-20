@@ -2,6 +2,7 @@ extends CharacterBody3D
 
 var front_ray
 var back_ray
+var detect_ray
 
 const TRAVEL_TIME = 0.5
 var tween
@@ -9,6 +10,7 @@ var tween
 func _ready():
 	front_ray = $FrontRay
 	back_ray = $BackRay
+	detect_ray = $DetectRay
 
 func _physics_process(_delta):
 	if tween != null and tween.is_running():

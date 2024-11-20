@@ -2,6 +2,7 @@ extends Node3D
 
 var front_ray
 var back_ray
+var detect_ray
 var animation
 
 const TRAVEL_TIME = 0.5
@@ -10,6 +11,7 @@ var tween
 func _ready():
 	front_ray = $FrontRay
 	back_ray = $BackRay
+	detect_ray = $DetectRay
 	animation = $Animation
 
 func addStep():

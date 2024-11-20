@@ -785,3 +785,8 @@ target_position = Vector3(0, 0, 2)
 debug_shape_custom_color = Color(0, 28.108, 0, 1)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="DetectRay" type="RayCast3D" parent="."]
+target_position = Vector3(0, 0, -4)
+debug_shape_custom_color = Color(0, 0, 10, 1)
+debug_shape_thickness = 1
