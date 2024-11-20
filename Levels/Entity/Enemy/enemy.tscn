@@ -778,8 +778,10 @@ autoplay = "Crab"
 
 [node name="FrontRay" type="RayCast3D" parent="."]
 target_position = Vector3(0, 0, -2)
+debug_shape_custom_color = Color(44.865, 0, 0, 1)
 
 [node name="BackRay" type="RayCast3D" parent="."]
 target_position = Vector3(0, 0, 2)
+debug_shape_custom_color = Color(0, 28.108, 0, 1)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
