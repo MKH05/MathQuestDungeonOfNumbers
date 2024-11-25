@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dpbhin2ysth76"]
+[gd_scene load_steps=8 format=3 uid="uid://dpbhin2ysth76"]
 
 [ext_resource type="Script" path="res://addons/level_block/level_block_node.gd" id="1_hsvdt"]
 [ext_resource type="Material" uid="uid://c71yladfjhgud" path="res://addons/level_block/default_material.tres" id="2_h16m8"]
@@ -7,7 +7,10 @@
 [ext_resource type="Environment" uid="uid://bkpykxn5phf6i" path="res://Assets/Environment/Dungeon_Environment.tres" id="5_sb2dq"]
 [ext_resource type="PackedScene" uid="uid://bob7138tsw51p" path="res://Assets/Environment/Levels/Entity/Enemy/enemy.tscn" id="6_sr0mh"]
 [ext_resource type="Script" path="res://Scripts/gui.gd" id="7_f7m8l"]
+<<<<<<< Updated upstream:Assets/Environment/Levels/level_1.tscn
 [ext_resource type="Script" path="res://Assets/Environment/Levels/Entity/Enemy/enemy.gd" id="7_sdhf8"]
+=======
+>>>>>>> Stashed changes:Levels/level_1.tscn
 
 [node name="Level1" type="Node3D"]
 
@@ -340,7 +343,7 @@ environment = ExtResource("5_sb2dq")
 
 [node name="Enemy" parent="Enemies" instance=ExtResource("6_sr0mh")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4, 0, 0)
-script = ExtResource("7_sdhf8")
+target = NodePath("../../Player")
 
 [node name="GUI" type="Control" parent="."]
 layout_mode = 3
