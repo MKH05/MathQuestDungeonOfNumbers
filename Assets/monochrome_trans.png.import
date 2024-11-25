@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b4m4nfuprw7kf"
-path="res://.godot/imported/monochrome_trans.png-2f503cef207ff7043ea396d186107e4f.ctex"
+path="res://.godot/imported/monochrome_trans.png-3fb56cb13aa49719acef8fa3478eaa49.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/monochrome_trans.png"
-dest_files=["res://.godot/imported/monochrome_trans.png-2f503cef207ff7043ea396d186107e4f.ctex"]
+source_file="res://Assets/monochrome_trans.png"
+dest_files=["res://.godot/imported/monochrome_trans.png-3fb56cb13aa49719acef8fa3478eaa49.ctex"]
 
 [params]
 

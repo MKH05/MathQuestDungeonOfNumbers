@@ -1,6 +1,7 @@
-[gd_scene load_steps=67 format=3 uid="uid://bob7138tsw51p"]
+[gd_scene load_steps=68 format=3 uid="uid://bob7138tsw51p"]
 
-[ext_resource type="Texture2D" uid="uid://bqxn0aeb4v5vy" path="res://addons/monochrome_32x32_transparent.png" id="1_h7nd4"]
+[ext_resource type="Texture2D" uid="uid://bqxn0aeb4v5vy" path="res://Assets/monochrome_32x32_transparent.png" id="1_h7nd4"]
+[ext_resource type="Texture2D" uid="uid://b1odilhc28r6h" path="res://Assets/EnemyIcon.png" id="2_ioo83"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_x6e14"]
 
@@ -790,3 +791,7 @@ debug_shape_custom_color = Color(0, 28.108, 0, 1)
 target_position = Vector3(0, 0, -4)
 debug_shape_custom_color = Color(0, 0, 10, 1)
 debug_shape_thickness = 1
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 5, 0)
+texture = ExtResource("2_ioo83")

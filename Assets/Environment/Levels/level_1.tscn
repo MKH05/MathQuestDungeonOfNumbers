@@ -3,11 +3,11 @@
 [ext_resource type="Script" path="res://addons/level_block/level_block_node.gd" id="1_hsvdt"]
 [ext_resource type="Material" uid="uid://c71yladfjhgud" path="res://addons/level_block/default_material.tres" id="2_h16m8"]
 [ext_resource type="Texture2D" uid="uid://dpccdpj80v5f7" path="res://Assets/tileset.png" id="3_6vnx0"]
-[ext_resource type="PackedScene" uid="uid://lg7tjjb1wgro" path="res://Levels/Entity/Player/player.tscn" id="4_f4mmq"]
+[ext_resource type="PackedScene" uid="uid://lg7tjjb1wgro" path="res://Assets/Environment/Levels/Entity/Player/player.tscn" id="4_f4mmq"]
 [ext_resource type="Environment" uid="uid://bkpykxn5phf6i" path="res://Assets/Environment/Dungeon_Environment.tres" id="5_sb2dq"]
-[ext_resource type="PackedScene" uid="uid://bob7138tsw51p" path="res://Levels/Entity/Enemy/enemy.tscn" id="6_sr0mh"]
+[ext_resource type="PackedScene" uid="uid://bob7138tsw51p" path="res://Assets/Environment/Levels/Entity/Enemy/enemy.tscn" id="6_sr0mh"]
 [ext_resource type="Script" path="res://Scripts/gui.gd" id="7_f7m8l"]
-[ext_resource type="Script" path="res://Levels/Entity/Enemy/enemy.gd" id="7_sdhf8"]
+[ext_resource type="Script" path="res://Assets/Environment/Levels/Entity/Enemy/enemy.gd" id="7_sdhf8"]
 
 [node name="Level1" type="Node3D"]
 
@@ -348,6 +348,7 @@ anchors_preset = 0
 offset_right = 1150.0
 offset_bottom = 650.0
 script = ExtResource("7_f7m8l")
+target = NodePath("../Player")
 
 [node name="StepLabel" type="Label" parent="GUI"]
 z_index = 1
@@ -383,7 +384,16 @@ color = Color(0, 0, 0, 1)
 
 [node name="Map" type="SubViewportContainer" parent="GUI"]
 layout_mode = 0
-offset_left = 931.0
-offset_top = 1.0
-offset_right = 1151.0
-offset_bottom = 221.0
+offset_left = 932.0
+offset_right = 1152.0
+offset_bottom = 220.0
+
+[node name="SubViewport" type="SubViewport" parent="GUI/Map"]
+handle_input_locally = false
+size = Vector2i(220, 220)
+render_target_update_mode = 4
+
+[node name="Camera3D" type="Camera3D" parent="GUI/Map/SubViewport"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 10, 0)
+projection = 1
+size = 20.0
