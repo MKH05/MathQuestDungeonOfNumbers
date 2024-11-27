@@ -34,7 +34,7 @@ func findPlayer():
 	var local_to_player = global_transform.basis.inverse() * to_player
 	
 	if abs(local_to_player.z) > abs(local_to_player.x):
-		if local_to_player.z > 0:
+		if local_to_player.z < 0:
 			bestMove = "Forward"
 		else:
 			bestMove = "Back"
@@ -48,7 +48,6 @@ func findPlayer():
 	
 	print("Local to Player: ", local_to_player)
 	print("Best Move: ", bestMove)
-
 
 func move_enemy_towards_player():
 	if tween != null and tween.is_running():
