@@ -1,6 +1,7 @@
-[gd_scene load_steps=68 format=3 uid="uid://bob7138tsw51p"]
+[gd_scene load_steps=69 format=3 uid="uid://bob7138tsw51p"]
 
 [ext_resource type="Texture2D" uid="uid://bqxn0aeb4v5vy" path="res://Assets/monochrome_32x32_transparent.png" id="1_h7nd4"]
+[ext_resource type="Script" path="res://Assets/Environment/Levels/Entity/Enemy/enemy.gd" id="1_ia3uc"]
 [ext_resource type="Texture2D" uid="uid://b1odilhc28r6h" path="res://Assets/EnemyIcon.png" id="2_ioo83"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_x6e14"]
@@ -765,6 +766,7 @@ animations = [{
 }]
 
 [node name="Enemy" type="CharacterBody3D"]
+script = ExtResource("1_ia3uc")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_x6e14")
