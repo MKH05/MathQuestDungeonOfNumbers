@@ -8,9 +8,6 @@ var score = 0
 func _ready() -> void:
 	load_score()
 
-func update_recent(s):
-	score = s
-
 func save_score():
 	var file = FileAccess.open(SAVEFILE, FileAccess.WRITE)
 	if file:

@@ -12,4 +12,6 @@ func _ready() -> void:
 	CurrentHealth = MaxHealth;
 
 func _process(delta: float) -> void:
-	pass
+	if CurrentHealth <= 0:
+		SaveLoad.score = step
+		SaveLoad.save_score()

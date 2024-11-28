@@ -1,0 +1,93 @@
+[gd_scene load_steps=4 format=3 uid="uid://d0xryri48ewkt"]
+
+[ext_resource type="FontFile" uid="uid://dgfre877yix4n" path="res://Assets/ARCADECLASSIC.TTF" id="1_j3u0y"]
+[ext_resource type="Script" path="res://Scripts/GameOver.gd" id="2_33ner"]
+
+[sub_resource type="Theme" id="Theme_xpxby"]
+Label/fonts/font = ExtResource("1_j3u0y")
+
+[node name="GameOver" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(8, 8)
+
+[node name="GuiElements" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme = SubResource("Theme_xpxby")
+script = ExtResource("2_33ner")
+
+[node name="BackGround" type="ColorRect" parent="GuiElements"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -140.0
+offset_top = -87.5
+offset_right = 100.0
+offset_bottom = 47.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="GameName" type="Label" parent="GuiElements"]
+z_index = 1
+layout_mode = 0
+offset_left = -120.0
+offset_top = -52.0
+offset_right = 4680.0
+offset_bottom = 454.0
+scale = Vector2(0.05, 0.05)
+theme_override_font_sizes/font_size = 250
+text = "MathQuest: Dungeon Of Numbers"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="HighscoreLabel" type="Label" parent="GuiElements"]
+z_index = 1
+layout_mode = 0
+offset_left = -121.0
+offset_top = -40.0
+offset_right = 4679.0
+offset_bottom = 466.0
+scale = Vector2(0.05, 0.05)
+theme_override_font_sizes/font_size = 150
+text = "Highscore
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="FinalScoreLabel" type="Label" parent="GuiElements"]
+z_index = 1
+layout_mode = 0
+offset_left = -121.0
+offset_top = -33.0
+offset_right = 4679.0
+offset_bottom = 473.0
+scale = Vector2(0.05, 0.05)
+theme_override_font_sizes/font_size = 150
+text = "Score
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Button" type="Button" parent="GuiElements"]
+layout_mode = 0
+offset_left = -23.0
+offset_top = -5.0
+offset_right = 877.0
+offset_bottom = 245.0
+scale = Vector2(0.05, 0.05)
+theme_override_fonts/font = ExtResource("1_j3u0y")
+theme_override_font_sizes/font_size = 100
+action_mode = 0
+text = "Play"
+
+[connection signal="pressed" from="GuiElements/Button" to="GuiElements" method="_on_button_pressed"]
