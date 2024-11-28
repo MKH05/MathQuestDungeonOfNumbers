@@ -1,0 +1,101 @@
+[gd_scene load_steps=14 format=3 uid="uid://b8wq7qu5hlk0k"]
+
+[ext_resource type="Texture2D" uid="uid://c6e6jwvnv8aef" path="res://Assets/Magic/Free Smoke Fx  Pixel 06.png" id="1_yuomy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vy6dn"]
+atlas = ExtResource("1_yuomy")
+region = Rect2(0, 0, 64, 61)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r2e4j"]
+atlas = ExtResource("1_yuomy")
+region = Rect2(64, 0, 64, 61)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8mecd"]
+atlas = ExtResource("1_yuomy")
+region = Rect2(128, 0, 64, 61)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7whgq"]
+atlas = ExtResource("1_yuomy")
+region = Rect2(192, 0, 64, 61)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xiv4a"]
+atlas = ExtResource("1_yuomy")
+region = Rect2(256, 0, 64, 61)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_guhs4"]
+atlas = ExtResource("1_yuomy")
+region = Rect2(320, 0, 64, 61)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ujgq"]
+atlas = ExtResource("1_yuomy")
+region = Rect2(384, 0, 64, 61)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ps4r"]
+atlas = ExtResource("1_yuomy")
+region = Rect2(448, 0, 64, 61)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jv4ne"]
+atlas = ExtResource("1_yuomy")
+region = Rect2(512, 0, 64, 61)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1237u"]
+atlas = ExtResource("1_yuomy")
+region = Rect2(576, 0, 64, 61)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nr4f3"]
+atlas = ExtResource("1_yuomy")
+region = Rect2(640, 0, 64, 61)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ppyh4"]
+animations = [{
+"frames": [{
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_vy6dn")
+}, {
+"duration": 0.75,
+"texture": SubResource("AtlasTexture_r2e4j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8mecd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7whgq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xiv4a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_guhs4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ujgq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ps4r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jv4ne")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1237u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nr4f3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
+[node name="Magic" type="AnimatedSprite3D"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 2, 0, 0)
+billboard = 2
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_ppyh4")
+autoplay = "default"
+frame_progress = 0.276238
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+light_volumetric_fog_energy = 5.0
+omni_range = 1.0
+omni_attenuation = 2.0

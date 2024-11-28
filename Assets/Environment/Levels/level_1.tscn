@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dpbhin2ysth76"]
+[gd_scene load_steps=15 format=3 uid="uid://dpbhin2ysth76"]
 
 [ext_resource type="Script" path="res://addons/level_block/level_block_node.gd" id="1_hsvdt"]
 [ext_resource type="Material" uid="uid://c71yladfjhgud" path="res://addons/level_block/default_material.tres" id="2_h16m8"]
@@ -12,6 +12,7 @@
 [ext_resource type="AudioStream" uid="uid://0g0sw0hgjkho" path="res://Assets/Sound/Music/Song1.mp3" id="11_gf0do"]
 [ext_resource type="AudioStream" uid="uid://c5vk42v2rhyxu" path="res://Assets/Sound/Music/Song2.mp3" id="12_o7jfj"]
 [ext_resource type="AudioStream" uid="uid://bdbhs1lycobev" path="res://Assets/Sound/Music/Song3.mp3" id="13_ln323"]
+[ext_resource type="PackedScene" uid="uid://b8wq7qu5hlk0k" path="res://Assets/Magic/magic.tscn" id="13_yk2dw"]
 
 [sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_wf1vy"]
 shuffle = true
@@ -464,6 +465,9 @@ offset_right = 835.0
 offset_bottom = 582.0
 theme = ExtResource("8_26clg")
 value = 100.0
+
+[node name="Magic" parent="." instance=ExtResource("13_yk2dw")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 2, -2, 0)
 
 [connection signal="text_changed" from="GUI/CanvasLayer/MathInput" to="GUI" method="_on_math_input_text_changed"]
 [connection signal="pressed" from="GUI/CanvasLayer/Defend" to="GUI" method="_on_defend_pressed"]
