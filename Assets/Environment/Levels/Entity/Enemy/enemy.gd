@@ -19,7 +19,7 @@ const WAIT_TIME = 0.55
 func _physics_process(_delta):
 	if detect_ray.is_colliding():
 		var collider = detect_ray.get_collider()
-		if collider and collider.name == "Enemy":
+		if collider and collider.name == "Player":
 			print("Detect ray hit the player!")
 			
 			

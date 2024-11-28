@@ -1,6 +1,5 @@
-[gd_scene load_steps=9 format=3 uid="uid://lg7tjjb1wgro"]
+[gd_scene load_steps=8 format=3 uid="uid://lg7tjjb1wgro"]
 
-[ext_resource type="Script" path="res://Assets/Environment/Levels/Entity/Player/player.gd" id="1_jko8i"]
 [ext_resource type="Texture2D" uid="uid://cvjyydcdygwf0" path="res://icon.svg" id="2_hu2dk"]
 
 [sub_resource type="Animation" id="Animation_77182"]
@@ -86,11 +85,10 @@ _data = {
 "RESET": SubResource("Animation_fury6")
 }
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_mcdrq"]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_67g61"]
 
-[node name="Player" type="Node3D"]
-transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, 0, 0, 0)
-script = ExtResource("1_jko8i")
+[node name="Player" type="CharacterBody3D"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
 
 [node name="Camera3D" type="Camera3D" parent="."]
 
@@ -122,7 +120,5 @@ texture = ExtResource("2_hu2dk")
 wait_time = 0.5
 one_shot = true
 
-[node name="Area3D" type="Area3D" parent="."]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-shape = SubResource("CapsuleShape3D_mcdrq")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_67g61")
