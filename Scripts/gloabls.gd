@@ -6,6 +6,8 @@ var CurrentHealth;
 var step = 0;
 var points = 0;
 
+var hasKey = false
+
 func _ready() -> void:
 	CurrentHealth = MaxHealth;
 

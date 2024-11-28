@@ -27,7 +27,10 @@ func _physics_process(_delta):
 		var collider = detect_ray.get_collider()
 		if collider and collider.name == "Enemy":
 			print("Detect ray hit an enemy!")
-			
+		elif collider and collider.name == "Key":
+			G.hasKey = true
+			collider.queue_free()
+
 	if tween != null and tween.is_running():
 		return
 		

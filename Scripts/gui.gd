@@ -8,6 +8,7 @@ extends Control
 
 @onready var HealthBar: ProgressBar = $CanvasLayer/HealthBar
 @onready var StepLabel: Label = $CanvasLayer/StepLabel
+@onready var KeyLabel: Label = $CanvasLayer/KeyLabel
 @onready var line_edit: LineEdit = $CanvasLayer/MathInput
 @onready var LineEditRegEx = RegEx.new()
 
@@ -41,6 +42,7 @@ func _on_defend_pressed() -> void:
 
 func _process(delta: float) -> void:
 	StepLabel.text = "Step: " + str(G.step)
+	KeyLabel.text = "Has Key: " + str(G.hasKey)
 	HealthBar.value = G.CurrentHealth
 	
 	if target:
