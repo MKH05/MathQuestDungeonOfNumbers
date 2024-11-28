@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dpbhin2ysth76"]
+[gd_scene load_steps=14 format=3 uid="uid://dpbhin2ysth76"]
 
 [ext_resource type="Script" path="res://addons/level_block/level_block_node.gd" id="1_hsvdt"]
 [ext_resource type="Material" uid="uid://c71yladfjhgud" path="res://addons/level_block/default_material.tres" id="2_h16m8"]
@@ -9,6 +9,16 @@
 [ext_resource type="Script" path="res://Scripts/gui.gd" id="7_f7m8l"]
 [ext_resource type="Theme" uid="uid://cb3q5whikh2y3" path="res://Assets/GUI_Theeme.tres" id="8_26clg"]
 [ext_resource type="PackedScene" uid="uid://u50dra05nd77" path="res://Assets/key.tscn" id="9_hb1qy"]
+[ext_resource type="AudioStream" uid="uid://0g0sw0hgjkho" path="res://Assets/Sound/Music/Song1.mp3" id="11_gf0do"]
+[ext_resource type="AudioStream" uid="uid://c5vk42v2rhyxu" path="res://Assets/Sound/Music/Song2.mp3" id="12_o7jfj"]
+[ext_resource type="AudioStream" uid="uid://bdbhs1lycobev" path="res://Assets/Sound/Music/Song3.mp3" id="13_ln323"]
+
+[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_wf1vy"]
+shuffle = true
+stream_count = 3
+stream_0 = ExtResource("11_gf0do")
+stream_1 = ExtResource("12_o7jfj")
+stream_2 = ExtResource("13_ln323")
 
 [node name="Level1" type="Node3D"]
 
@@ -332,6 +342,11 @@ top_face = 10
 bottom_face = 10
 
 [node name="Player" parent="." instance=ExtResource("4_f4mmq")]
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Player"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+stream = SubResource("AudioStreamPlaylist_wf1vy")
+autoplay = true
 
 [node name="Key" parent="." instance=ExtResource("9_hb1qy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 8)
