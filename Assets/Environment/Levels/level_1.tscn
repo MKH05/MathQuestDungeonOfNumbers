@@ -11,8 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://u50dra05nd77" path="res://Assets/key.tscn" id="9_hb1qy"]
 [ext_resource type="AudioStream" uid="uid://0g0sw0hgjkho" path="res://Assets/Sound/Music/Song1.mp3" id="11_gf0do"]
 [ext_resource type="AudioStream" uid="uid://c5vk42v2rhyxu" path="res://Assets/Sound/Music/Song2.mp3" id="12_o7jfj"]
+[ext_resource type="FontFile" uid="uid://dgfre877yix4n" path="res://Assets/ARCADECLASSIC.TTF" id="13_f5rhc"]
 [ext_resource type="AudioStream" uid="uid://bdbhs1lycobev" path="res://Assets/Sound/Music/Song3.mp3" id="13_ln323"]
-[ext_resource type="PackedScene" uid="uid://b8wq7qu5hlk0k" path="res://Assets/Magic/magic.tscn" id="13_yk2dw"]
 
 [sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_wf1vy"]
 shuffle = true
@@ -485,7 +485,9 @@ offset_left = -0.512009
 offset_top = -0.144043
 offset_right = -0.0480042
 offset_bottom = -0.0400391
+theme_override_fonts/font = ExtResource("13_f5rhc")
 action_mode = 0
+text = "Defend"
 
 [node name="Attack" type="Button" parent="GUI/CanvasLayer"]
 z_index = 1
@@ -498,7 +500,9 @@ offset_left = -0.256042
 offset_top = -0.144043
 offset_right = 0.207947
 offset_bottom = -0.0400391
+theme_override_fonts/font = ExtResource("13_f5rhc")
 action_mode = 0
+text = "Attack"
 
 [node name="HealthBar" type="ProgressBar" parent="GUI/CanvasLayer"]
 z_index = -1
@@ -540,9 +544,6 @@ theme = ExtResource("8_26clg")
 text = "Question"
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="Magic" parent="." instance=ExtResource("13_yk2dw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 2, -2, 0)
 
 [connection signal="text_changed" from="GUI/CanvasLayer/MathInput" to="GUI" method="_on_math_input_text_changed"]
 [connection signal="pressed" from="GUI/CanvasLayer/Defend" to="GUI" method="_on_defend_pressed"]

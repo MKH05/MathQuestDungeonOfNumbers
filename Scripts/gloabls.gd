@@ -10,6 +10,8 @@ var hasKey = false
 var canDoMath = false
 var hasCorrect = false
 
+var Dif = "easy"
+
 func _save_score():
 	if step > SaveLoad.highest_record:
 		SaveLoad.highest_record = step

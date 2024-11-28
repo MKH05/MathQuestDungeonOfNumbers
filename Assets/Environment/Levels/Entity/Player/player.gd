@@ -28,7 +28,7 @@ func addStep():
 func magic():
 	if magicI:
 		addStep()
-		Math.generate_question("easy")
+		Math.generate_question(str(G.Dif))
 		
 		var magic_instance = magicI.instantiate()
 		magic_instance.position = global_transform.origin 

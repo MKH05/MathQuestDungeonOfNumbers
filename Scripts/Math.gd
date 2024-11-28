@@ -40,7 +40,7 @@ var current_question = ""
 var current_answer = 0
 
 func _ready():
-	var question = generate_question("easy")
+	var question = generate_question(str(G.Dif))
 	print("Question: ", question)
 
 func generate_question(difficulty: String) -> String:

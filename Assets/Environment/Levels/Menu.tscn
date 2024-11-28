@@ -90,4 +90,18 @@ theme_override_font_sizes/font_size = 100
 action_mode = 0
 text = "Play"
 
+[node name="Dif" type="Button" parent="GuiElements"]
+layout_mode = 0
+offset_left = -11.25
+offset_top = 8.0
+offset_right = 438.75
+offset_bottom = 118.0
+scale = Vector2(0.05, 0.05)
+theme_override_fonts/font = ExtResource("1_w0r1a")
+theme_override_font_sizes/font_size = 100
+action_mode = 0
+text = "Easy
+"
+
 [connection signal="pressed" from="GuiElements/Button" to="GuiElements" method="_on_button_pressed"]
+[connection signal="pressed" from="GuiElements/Dif" to="GuiElements" method="_on_dif_pressed"]
