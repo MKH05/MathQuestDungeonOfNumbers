@@ -17,6 +17,12 @@ const TRAVEL_TIME = 0.5
 const WAIT_TIME = 0.55
 
 func _physics_process(_delta):
+	if detect_ray.is_colliding():
+		var collider = detect_ray.get_collider()
+		if collider and collider.name == "Enemy":
+			print("Detect ray hit the player!")
+			
+			
 	if G.step != previous_s:
 		previous_s = G.step
 		print("Move")

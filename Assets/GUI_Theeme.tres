@@ -1,0 +1,11 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://cb3q5whikh2y3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2pqco"]
+bg_color = Color(0.779291, 0.779291, 0.779291, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rofh0"]
+bg_color = Color(0.487389, 0, 0.0140994, 1)
+
+[resource]
+Button/styles/hover = SubResource("StyleBoxFlat_2pqco")
+ProgressBar/styles/background = SubResource("StyleBoxFlat_rofh0")

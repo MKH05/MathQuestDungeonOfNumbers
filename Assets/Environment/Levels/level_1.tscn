@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dpbhin2ysth76"]
+[gd_scene load_steps=9 format=3 uid="uid://dpbhin2ysth76"]
 
 [ext_resource type="Script" path="res://addons/level_block/level_block_node.gd" id="1_hsvdt"]
 [ext_resource type="Material" uid="uid://c71yladfjhgud" path="res://addons/level_block/default_material.tres" id="2_h16m8"]
@@ -7,6 +7,7 @@
 [ext_resource type="Environment" uid="uid://bkpykxn5phf6i" path="res://Assets/Environment/Dungeon_Environment.tres" id="5_sb2dq"]
 [ext_resource type="PackedScene" uid="uid://bob7138tsw51p" path="res://Assets/Environment/Levels/Entity/Enemy/enemy.tscn" id="6_sr0mh"]
 [ext_resource type="Script" path="res://Scripts/gui.gd" id="7_f7m8l"]
+[ext_resource type="Theme" uid="uid://cb3q5whikh2y3" path="res://Assets/GUI_Theeme.tres" id="8_26clg"]
 
 [node name="Level1" type="Node3D"]
 
@@ -330,7 +331,6 @@ top_face = 10
 bottom_face = 10
 
 [node name="Player" parent="." instance=ExtResource("4_f4mmq")]
-transform = Transform3D(-2.18557e-07, 0, -1, 0, 1, 0, 1, 0, -2.18557e-07, 0, 0, 0)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource("5_sb2dq")
@@ -339,60 +339,104 @@ environment = ExtResource("5_sb2dq")
 
 [node name="Enemy" parent="Enemies" instance=ExtResource("6_sr0mh")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 6, 0, 0)
-target = NodePath("../../Player")
 
 [node name="GUI" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 1150.0
 offset_bottom = 650.0
+theme = ExtResource("8_26clg")
 script = ExtResource("7_f7m8l")
-target = NodePath("../Player")
 
-[node name="StepLabel" type="Label" parent="GUI"]
+[node name="CanvasLayer" type="CanvasLayer" parent="GUI"]
+
+[node name="StepLabel" type="Label" parent="GUI/CanvasLayer"]
 z_index = 1
-layout_mode = 0
-offset_right = 40.0
+offset_right = 56.0
 offset_bottom = 23.0
 text = "Steps:1"
 
-[node name="Bars" type="Node" parent="GUI"]
+[node name="Bars" type="Node" parent="GUI/CanvasLayer"]
 
-[node name="Bar" type="ColorRect" parent="GUI/Bars"]
+[node name="Bar" type="ColorRect" parent="GUI/CanvasLayer/Bars"]
 modulate = Color(1, 1, 1, 0.6)
+z_index = -1
 offset_top = -20.0
 offset_right = 220.0
 offset_bottom = 656.0
 color = Color(0, 0, 0, 1)
 
-[node name="Bar3" type="ColorRect" parent="GUI/Bars"]
+[node name="Bar3" type="ColorRect" parent="GUI/CanvasLayer/Bars"]
 modulate = Color(1, 1, 1, 0.6)
+z_index = -1
 offset_left = 220.0
 offset_top = 472.0
 offset_right = 932.0
 offset_bottom = 656.0
 color = Color(0, 0, 0, 1)
 
-[node name="Bar2" type="ColorRect" parent="GUI/Bars"]
+[node name="Bar2" type="ColorRect" parent="GUI/CanvasLayer/Bars"]
 modulate = Color(1, 1, 1, 0.6)
+z_index = -1
 offset_left = 932.0
 offset_top = -20.0
 offset_right = 1152.0
 offset_bottom = 656.0
 color = Color(0, 0, 0, 1)
 
-[node name="Map" type="SubViewportContainer" parent="GUI"]
-layout_mode = 0
+[node name="Map" type="SubViewportContainer" parent="GUI/CanvasLayer"]
+z_index = -2
 offset_left = 932.0
 offset_right = 1152.0
 offset_bottom = 220.0
 
-[node name="SubViewport" type="SubViewport" parent="GUI/Map"]
+[node name="SubViewport" type="SubViewport" parent="GUI/CanvasLayer/Map"]
 handle_input_locally = false
 size = Vector2i(220, 220)
 render_target_update_mode = 4
 
-[node name="Camera3D" type="Camera3D" parent="GUI/Map/SubViewport"]
+[node name="Camera3D" type="Camera3D" parent="GUI/CanvasLayer/Map/SubViewport"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 10, 0)
 projection = 1
 size = 20.0
+
+[node name="MathInput" type="LineEdit" parent="GUI/CanvasLayer"]
+z_index = 1
+offset_left = 282.0
+offset_top = 512.0
+offset_right = 870.0
+offset_bottom = 552.0
+placeholder_text = "Enter Answer"
+alignment = 1
+max_length = 5
+clear_button_enabled = true
+caret_blink = true
+
+[node name="Defend" type="Button" parent="GUI/CanvasLayer"]
+z_index = 1
+offset_left = 208.0
+offset_top = 504.0
+offset_right = 258.0
+offset_bottom = 554.0
+action_mode = 0
+
+[node name="Attack" type="Button" parent="GUI/CanvasLayer"]
+z_index = 1
+offset_left = 896.0
+offset_top = 504.0
+offset_right = 946.0
+offset_bottom = 554.0
+action_mode = 0
+
+[node name="HealthBar" type="ProgressBar" parent="GUI/CanvasLayer"]
+z_index = -1
+offset_left = 317.0
+offset_top = 555.0
+offset_right = 835.0
+offset_bottom = 582.0
+theme = ExtResource("8_26clg")
+value = 100.0
+
+[connection signal="text_changed" from="GUI/CanvasLayer/MathInput" to="GUI" method="_on_math_input_text_changed"]
+[connection signal="pressed" from="GUI/CanvasLayer/Defend" to="GUI" method="_on_defend_pressed"]
+[connection signal="pressed" from="GUI/CanvasLayer/Attack" to="GUI" method="_on_attack_pressed"]

@@ -203,3 +203,7 @@ func _enter_tree() -> void:
 
 func _exit_tree() -> void:
 	clear()
+
+
+func _on_math_input_text_changed(new_text: String) -> void:
+	pass # Replace with function body.
