@@ -381,6 +381,7 @@ anchor_right = 0.049
 anchor_bottom = 0.035
 offset_right = -0.448002
 offset_bottom = 0.32
+theme = ExtResource("8_26clg")
 text = "Steps:1"
 
 [node name="KeyLabel" type="Label" parent="GUI/CanvasLayer"]
@@ -392,6 +393,7 @@ anchor_bottom = 0.074
 offset_top = -0.272001
 offset_right = -53.44
 offset_bottom = 0.0480003
+theme = ExtResource("8_26clg")
 text = "Has Key: False"
 
 [node name="Bars" type="Node" parent="GUI/CanvasLayer"]
@@ -465,7 +467,8 @@ offset_left = -0.23999
 offset_top = 0.0799866
 offset_right = 0.239929
 offset_bottom = -0.0960083
-placeholder_text = "Enter Answer"
+theme = ExtResource("8_26clg")
+placeholder_text = "Enter  Answer"
 alignment = 1
 max_length = 5
 clear_button_enabled = true
@@ -510,6 +513,33 @@ offset_right = -0.200012
 offset_bottom = 0.0959473
 theme = ExtResource("8_26clg")
 value = 100.0
+
+[node name="MathContainer" type="ColorRect" parent="GUI/CanvasLayer"]
+modulate = Color(1, 1, 1, 0.6)
+z_index = -1
+anchors_preset = -1
+anchor_left = 0.191
+anchor_top = 0.657
+anchor_right = 0.809
+anchor_bottom = 0.728
+offset_left = -0.0320129
+offset_top = 0.264008
+offset_right = 0.0319824
+offset_bottom = 0.255981
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="GUI/CanvasLayer/MathContainer"]
+z_index = 5
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("8_26clg")
+text = "Question"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Magic" parent="." instance=ExtResource("13_yk2dw")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 2, -2, 0)

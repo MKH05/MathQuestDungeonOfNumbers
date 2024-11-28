@@ -1,5 +1,8 @@
 extends CharacterBody3D
 
+@export var magic_scene : PackedScene
+@onready var magicI := magic_scene
+
 var front_ray
 var back_ray
 var detect_ray
@@ -22,14 +25,42 @@ func addStep():
 	G.step += 1
 	cooldown_timer.start()
 
+func magic():
+	if magicI:
+		addStep()
+		Math.generate_question("easy")
+		
+		var magic_instance = magicI.instantiate()
+		magic_instance.position = global_transform.origin 
+		
+		tween = create_tween().set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
+		tween.tween_property(magic_instance, "transform", transform.translated_local(Vector3.FORWARD * 2), 0.25)
+		
+		get_parent().add_child(magic_instance)
+		
+		await get_tree().create_timer(0.5).timeout
+		
+		magic_instance.queue_free()
+
 func _physics_process(_delta):
 	if detect_ray.is_colliding():
 		var collider = detect_ray.get_collider()
 		if collider and collider.name == "Enemy":
-			print("Detect ray hit an enemy!")
+			G.canDoMath = true
+			if G.hasCorrect == true:
+				G.hasCorrect = false
+				magic()
+				collider.hp -= 10
 		elif collider and collider.name == "Key":
+			G.canDoMath = false
 			G.hasKey = true
 			collider.queue_free()
+			
+			await get_tree().create_timer(0.5).timeout
+			
+			get_tree().change_scene_to_file("res://Assets/Environment/Levels/Menu.tscn")
+		else: 
+			G.canDoMath = false
 
 	if tween != null and tween.is_running():
 		return

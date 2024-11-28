@@ -6,7 +6,14 @@ extends Control
 func _ready() -> void:
 	highscore.text = "Highscore: " + str(SaveLoad.highest_record)
 	score.text = "Score: " + str(SaveLoad.score)
+	if SaveLoad.score > 0:
+		score.visible = true
+	else:
+		score.visible = false
 
 func _on_button_pressed() -> void:
 	G.step = 0
+	
+	G.CurrentHealth = G.MaxHealth
+	
 	get_tree().change_scene_to_file("res://Assets/Environment/Levels/level_1.tscn")

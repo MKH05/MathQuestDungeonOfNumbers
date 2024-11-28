@@ -3,6 +3,9 @@ extends CharacterBody3D
 @export var target : NodePath
 @onready var player := get_node(target)
 
+@export var maxHp = 100
+@export var hp = maxHp
+
 @onready var front_ray = $FrontRay
 @onready var back_ray = $BackRay
 @onready var detect_ray = $DetectRay
@@ -14,14 +17,12 @@ var bestMove
 var playerInRange = false
 
 const TRAVEL_TIME = 0.5
-const WAIT_TIME = 0.55
+const WAIT_TIME = 0.25
 
 func _physics_process(_delta):
-	if detect_ray.is_colliding():
-		var collider = detect_ray.get_collider()
-		if collider and collider.name == "Player":
-			print("Detect ray hit the player!")
-			
+	if hp <= 0:
+		G.step += 10
+		self.queue_free()
 
 	if G.step != previous_s:
 		previous_s = G.step
@@ -29,6 +30,11 @@ func _physics_process(_delta):
 		
 		findPlayer()
 		
+		if detect_ray.is_colliding():
+			var collider = detect_ray.get_collider()
+			if collider and collider.name == "Player":
+				G.CurrentHealth -=5
+			
 		if playerInRange == true:
 			playerInRange = false
 			

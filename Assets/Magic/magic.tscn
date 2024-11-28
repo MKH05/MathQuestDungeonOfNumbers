@@ -1,6 +1,7 @@
-[gd_scene load_steps=14 format=3 uid="uid://b8wq7qu5hlk0k"]
+[gd_scene load_steps=15 format=3 uid="uid://b8wq7qu5hlk0k"]
 
 [ext_resource type="Texture2D" uid="uid://c6e6jwvnv8aef" path="res://Assets/Magic/Free Smoke Fx  Pixel 06.png" id="1_yuomy"]
+[ext_resource type="AudioStream" uid="uid://davyx6kvff5gv" path="res://Assets/Sound/SFX/MagicSFX.mp3" id="2_178hq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vy6dn"]
 atlas = ExtResource("1_yuomy")
@@ -99,3 +100,7 @@ frame_progress = 0.276238
 light_volumetric_fog_energy = 5.0
 omni_range = 1.0
 omni_attenuation = 2.0
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_178hq")
+autoplay = true
