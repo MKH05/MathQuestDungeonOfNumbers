@@ -22,7 +22,7 @@ func _physics_process(_delta):
 		if collider and collider.name == "Player":
 			print("Detect ray hit the player!")
 			
-			
+
 	if G.step != previous_s:
 		previous_s = G.step
 		print("Move")
