@@ -34,6 +34,7 @@ func _physics_process(_delta):
 			var collider = detect_ray.get_collider()
 			if collider and collider.name == "Player":
 				G.CurrentHealth -=5
+				$AudioStreamPlayer3D.playing = true
 			
 		if playerInRange == true:
 			playerInRange = false

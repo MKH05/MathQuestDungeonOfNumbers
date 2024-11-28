@@ -1,8 +1,9 @@
-[gd_scene load_steps=69 format=3 uid="uid://bob7138tsw51p"]
+[gd_scene load_steps=70 format=3 uid="uid://bob7138tsw51p"]
 
 [ext_resource type="Texture2D" uid="uid://bqxn0aeb4v5vy" path="res://Assets/monochrome_32x32_transparent.png" id="1_h7nd4"]
 [ext_resource type="Script" path="res://Assets/Environment/Levels/Entity/Enemy/enemy.gd" id="1_ia3uc"]
 [ext_resource type="Texture2D" uid="uid://b1odilhc28r6h" path="res://Assets/EnemyIcon.png" id="2_ioo83"]
+[ext_resource type="AudioStream" uid="uid://4om1jma3120a" path="res://Assets/Sound/SFX/Hurt.mp3" id="4_tyuxk"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_x6e14"]
 
@@ -797,3 +798,6 @@ debug_shape_thickness = 1
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 5, 0)
 texture = ExtResource("2_ioo83")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("4_tyuxk")
